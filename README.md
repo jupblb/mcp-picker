@@ -1,6 +1,8 @@
 # mcp-picker
 
-Interactive TUI for selecting MCP servers to use with [Amp].
+Interactive TUI for selecting MCP servers to use with [Amp] or [Claude Code].
+
+![demo]
 
 ## Usage
 
@@ -16,10 +18,10 @@ claude --mcp-config $(mcp-picker -a claude)
 
 Use `-a`/`--agent` to specify the output format:
 
-| Agent   | Flag          | Output                          |
-|---------|---------------|---------------------------------|
-| amp     | `-a amp`      | Raw server configs (default)    |
-| claude  | `-a claude`   | Wrapped in `{"mcpServers": ...}`|
+| Agent  | Flag        | Output                           |
+|--------|-------------|----------------------------------|
+| amp    | `-a amp`    | Raw server configs (default)     |
+| claude | `-a claude` | Wrapped in `{"mcpServers": ...}` |
 
 ## Configuration
 
@@ -41,14 +43,11 @@ Create `~/.config/mcp-picker/servers.json`:
 ## Build
 
 ``` bash
+go build ./...
+# or
 nix build
 ```
 
-## Controls
-
-- `j/k` or arrows: navigate
-- `space`: toggle selection
-- `enter`: confirm
-- `q/esc`: cancel
-
   [Amp]: https://ampcode.com
+  [Claude Code]: https://claude.com/product/claude-code
+  [demo]: https://github.com/user-attachments/assets/35f23ccb-6520-410a-8fc0-b52440de2f16
